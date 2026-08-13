@@ -1,0 +1,45 @@
+# Dependências
+node_modules/
+.pnp
+.pnp.js
+
+# Builds / saídas
+dist/
+build/
+.next/
+out/
+.open-next/
+.medusa/
+.cache/
+.turbo/
+coverage/
+
+# Ambiente (NUNCA commitar segredos)
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+# exceção: os exemplos DEVEM ser versionados
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Sistema operacional / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Sanity
+sanity/dist/
+
+# Medusa
+apps/medusa/uploads/

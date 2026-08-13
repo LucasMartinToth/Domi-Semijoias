@@ -1,0 +1,17 @@
+{
+  "name": "domi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "E-commerce da Domi Semijoias — monorepo (storefront Next.js + Medusa + Sanity)",
+  "scripts": {
+    "dev:storefront": "npm --prefix apps/storefront run dev",
+    "dev:medusa": "npm --prefix apps/medusa run dev",
+    "dev:sanity": "npm --prefix sanity run dev",
+    "build:storefront": "npm --prefix apps/storefront run build",
+    "build:medusa": "npm --prefix apps/medusa run build",
+    "install:all": "npm --prefix apps/storefront install && npm --prefix apps/medusa install && npm --prefix sanity install"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

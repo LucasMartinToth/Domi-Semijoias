@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/*
+  Design system da Domi — extraído do handoff (design_handoffs/home.zip).
+  Estética editorial: cantos retos (raio 0), serifada de display + Inter,
+  paleta terrosa quente. Ver README do handoff para a especificação completa.
+*/
+
+@theme {
+  /* ---- Cores ---- */
+  --color-brand: #96695e; /* títulos, eyebrows, preços, botões, badges */
+  --color-cream: #ece9e5; /* fundo geral; texto sobre escuro */
+  --color-ink: #2b201c; /* texto principal, CTA primário, blocos escuros */
+  --color-porcelain: #f6f2ee; /* texto/elementos claros sobre a marca */
+  --color-body: #5d4b44; /* parágrafos */
+  --color-muted: #6b574f; /* apoios curtos */
+  --color-subtle: #8b7a72; /* material do produto, legendas */
+  --color-nav: #4a3a34; /* itens de menu, ícones */
+  --color-rose: #c9a99f; /* labels sobre fundo escuro */
+
+  /* ---- Tipografia ---- */
+  /* --font-domi-* são injetadas por next/font no layout.
+     TAN Twinkle (licenciada, hospedada pelo cliente) entra depois como
+     primeira opção do stack serifado; por ora cai em EB Garamond. */
+  --font-serif: var(--font-domi-serif), "EB Garamond", Georgia, serif;
+  --font-sans: var(--font-domi-sans), "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ---- Raios ---- */
+  --radius-badge: 999px;
+}
+
+/* Cantos retos por padrão (estética editorial do handoff) */
+* {
+  border-radius: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  Sistema de placeholders de imagem (do handoff): todo slot de foto é uma
+  faixa diagonal em CSS. Passo 12px, ângulo 135deg. Trocar por
+  background-image / <img object-fit:cover> quando houver foto real.
+*/
+.stripe-product {
+  background: repeating-linear-gradient(135deg, #e2dcd7 0 12px, #dad3cd 12px 24px);
+}
+.stripe-hero {
+  background: repeating-linear-gradient(135deg, #ddd6d0 0 12px, #d5cdc6 12px 24px);
+}
+.stripe-dark {
+  background: repeating-linear-gradient(135deg, #3a2c26 0 12px, #33251f 12px 24px);
+}
+.stripe-brand {
+  background: repeating-linear-gradient(135deg, #8b6055 0 12px, #815549 12px 24px);
+}
+
+/* Logo Domi colorida na cor da marca via máscara CSS */
+.domi-logo-mask {
+  background-color: var(--color-brand);
+  -webkit-mask: url("/domi-logo.svg") center / contain no-repeat;
+  mask: url("/domi-logo.svg") center / contain no-repeat;
+}
