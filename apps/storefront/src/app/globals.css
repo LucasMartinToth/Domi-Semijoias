@@ -20,9 +20,8 @@
 
   /* ---- Tipografia ---- */
   /* --font-domi-* são injetadas por next/font no layout.
-     TAN Twinkle (licenciada, hospedada pelo cliente) entra depois como
-     primeira opção do stack serifado; por ora cai em EB Garamond. */
-  --font-serif: var(--font-domi-serif), "EB Garamond", Georgia, serif;
+     Stack de display: TAN Twinkle (marca) → EB Garamond → Georgia. */
+  --font-serif: var(--font-domi-twinkle), var(--font-domi-serif), "EB Garamond", Georgia, serif;
   --font-sans: var(--font-domi-sans), "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 

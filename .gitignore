@@ -43,3 +43,8 @@ sanity/dist/
 
 # Medusa
 apps/medusa/uploads/
+
+# Fontes licenciadas/comerciais — NÃO versionar (repo público).
+# Ficam locais; no deploy são injetadas fora do Git. Ex.: TAN Twinkle.
+TANTWINKLE.otf
+*.otf

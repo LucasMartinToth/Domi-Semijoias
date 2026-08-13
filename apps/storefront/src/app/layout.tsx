@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
 import { EB_Garamond, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-// Serifada de display. Fallback de TAN Twinkle (licenciada) até o cliente
-// hospedar a fonte de marca — mesma escolha do protótipo do handoff.
+// Fonte de marca (display): TAN Twinkle, licenciada e hospedada pelo cliente.
+const twinkle = localFont({
+  src: "../fonts/TANTWINKLE.otf",
+  variable: "--font-domi-twinkle",
+  weight: "400",
+  display: "swap",
+});
+
+// EB Garamond entra como fallback da TAN Twinkle no stack serifado.
 const serif = EB_Garamond({
   variable: "--font-domi-serif",
   subsets: ["latin"],
@@ -29,7 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
-      className={`${serif.variable} ${sans.variable} h-full antialiased`}
+      className={`${twinkle.variable} ${serif.variable} ${sans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink font-sans">
         {children}
